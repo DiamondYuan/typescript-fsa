@@ -35,40 +35,15 @@
     "generate-toc": "git ls-files | egrep '\\.md$' | xargs scripts/markdown-toc-all.sh",
     "jest": "jest",
     "lint-file": "tslint",
-    "lint": "tslint --project .",
     "prepublishOnly": "yarn run test && yarn run build",
     "test": "yarn run lint && tsc && yarn run jest"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.{js,json}": [
-      "yarn run format-file",
-      "git add"
-    ],
-    "**/*.ts": [
-      "yarn run format-file",
-      "yarn run lint-file --fix",
-      "git add"
-    ],
-    "*.md": [
-      "./scripts/markdown-toc-all.sh",
-      "git add"
-    ]
-  },
   "devDependencies": {
     "@types/jest": "^23.3.3",
-    "husky": "^1.1.1",
     "jest": "^23.6.0",
-    "lint-staged": "^7.3.0",
     "markdown-toc": "^1.2.0",
     "prettier": "^1.14.3",
     "ts-jest": "^23.10.3",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.1.1",
     "typescript-fsa": "^3.0.0-beta-2"
   },

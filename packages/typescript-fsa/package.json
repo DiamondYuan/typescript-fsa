@@ -24,8 +24,6 @@
     "clean": "rimraf lib dist",
     "test": "ts-node -P tsconfig.tests.json node_modules/.bin/tape tests/*.ts",
     "build:commonjs": "tsc",
-    "build:umd": "NODE_ENV=development rollup -c -o dist/typescript-fsa.js",
-    "build:umd:min": "NODE_ENV=production rollup -c -o dist/typescript-fsa.min.js",
     "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
     "prepublish": "npm run clean && npm run test && npm run build"
   },
@@ -41,7 +39,6 @@
     "rollup-plugin-uglify": "^2.0.1",
     "tape": "^4.6.2",
     "ts-node": "^6.0.0",
-    "tslint": "^5.0.0",
     "typescript": "^2.8.1",
     "typings-tester": "^0.3.0"
   },
