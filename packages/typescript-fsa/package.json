@@ -1,7 +1,10 @@
 {
-  "name": "typescript-fsa",
+  "name": "@diamondyuan/typescript-fsa",
   "version": "3.0.0-beta-2",
   "description": "Type-safe action creator utilities",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "redux",
     "flux",
@@ -19,13 +22,12 @@
   "repository": "aikoven/typescript-fsa",
   "scripts": {
     "clean": "rimraf lib dist",
-    "lint": "tslint -c tslint.json src/index.ts tests/index.ts",
     "test": "ts-node -P tsconfig.tests.json node_modules/.bin/tape tests/*.ts",
     "build:commonjs": "tsc",
     "build:umd": "NODE_ENV=development rollup -c -o dist/typescript-fsa.js",
     "build:umd:min": "NODE_ENV=production rollup -c -o dist/typescript-fsa.min.js",
     "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
-    "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
+    "prepublish": "npm run clean && npm run test && npm run build"
   },
   "author": "Daniel Lytkin <dan.lytkin@gmail.com>",
   "license": "MIT",
