@@ -1,6 +1,6 @@
 /* eslint-disable max-nested-callbacks */
 /* eslint-disable no-undefined */
-import actionCreatorFactory from 'typescript-fsa';
+import actionCreatorFactory from '@diamondyuan/typescript-fsa';
 import {
   ReducerBuilder,
   reducerWithInitialState,
