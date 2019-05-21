@@ -6,8 +6,7 @@
     "build": "lerna exec npm run build",
     "clean": "lerna exec npm run clean",
     "cov": "lerna exec npm run cov",
-    "test": "lerna exec npm run test",
-    "prepublish": "npm run lint && npm run build"
+    "test": "lerna exec npm run test"
   },
   "license": "MIT",
   "author": "DiamondYuan",

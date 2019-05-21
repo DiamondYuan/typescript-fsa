@@ -4,8 +4,8 @@ node_js:
   - '8'
   - '10'
 install:
-  - yarn lerna bootstrap
   - yarn
+  - yarn lerna bootstrap
 script:
   - yarn lint
   - yarn cov
