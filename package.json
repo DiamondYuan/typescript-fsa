@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "precommit": "yarn lint",
     "clean": "lerna exec yarn clean",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "cov": "egg-bin cov"
