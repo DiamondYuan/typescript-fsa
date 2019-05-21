@@ -4,10 +4,11 @@ node_js:
   - '8'
   - '10'
 install:
-  - yarn
   - yarn lerna bootstrap
+  - yarn
 script:
   - yarn lint
   - yarn cov
+  - yarn build
 after_success:
   - npm i codecov && codecov
