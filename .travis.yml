@@ -1,0 +1,14 @@
+sudo: false
+language: node_js
+node_js:
+  - '8'
+  - '10'
+install:
+  - yarn
+  - yarn bootstrap
+script:
+  - yarn lint
+  - yarn test
+  - yarn cov
+after_success:
+  - npm i codecov && codecov
