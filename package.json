@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "clean": "lerna exec yarn clean",
     "lint": "eslint --ext .js,.ts,.tsx ."
   },
   "license": "MIT",
