@@ -20,6 +20,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf lib",
+    "cov": "egg-bin cov",
     "test": "egg-bin test"
   },
   "egg": {

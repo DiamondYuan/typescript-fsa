@@ -19,7 +19,8 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf lib",
-    "test": "egg-bin test"
+    "test": "egg-bin test",
+    "cov": "egg-bin cov"
   },
   "devDependencies": {
     "@diamondyuan/typescript-fsa": "^0.0.4"
