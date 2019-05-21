@@ -1,6 +1,6 @@
 {
   "name": "@diamondyuan/typescript-fsa",
-  "version": "3.0.0-beta-2",
+  "version": "0.0.0",
   "description": "Type-safe action creator utilities",
   "publishConfig": {
     "access": "public"
@@ -19,15 +19,13 @@
     "lib",
     "src"
   ],
-  "repository": "aikoven/typescript-fsa",
   "scripts": {
     "clean": "rimraf lib dist",
     "test": "ts-node -P tsconfig.tests.json node_modules/.bin/tape tests/*.ts",
     "build:commonjs": "tsc",
-    "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
     "prepublish": "npm run clean && npm run test && npm run build"
   },
-  "author": "Daniel Lytkin <dan.lytkin@gmail.com>",
+  "author": "DiamondYuan",
   "license": "MIT",
   "devDependencies": {
     "@alexlur/rollup-plugin-typescript": "^1.0.4",
@@ -41,13 +39,5 @@
     "ts-node": "^6.0.0",
     "typescript": "^2.8.1",
     "typings-tester": "^0.3.0"
-  },
-  "greenkeeper": {
-    "ignore": [
-      "rollup",
-      "rollup-plugin-execute",
-      "rollup-plugin-replace",
-      "rollup-plugin-uglify"
-    ]
   }
 }
