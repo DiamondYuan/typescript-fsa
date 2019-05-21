@@ -21,10 +21,10 @@
     "prepublish": "yarn run build"
   },
   "devDependencies": {
-    "@diamondyuan/typescript-fsa": "^0.0.3",
-    "typescript": "^3.1.1"
+    "@diamondyuan/typescript-fsa": "^0.0.3"
   },
   "peerDependencies": {
     "@diamondyuan/typescript-fsa": "*"
-  }
+  },
+  "gitHead": "3e6adde703b105f17536ee9ecac05adc165d8b6e"
 }

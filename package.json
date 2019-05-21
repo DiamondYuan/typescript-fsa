@@ -4,6 +4,7 @@
   "scripts": {
     "clean": "lerna exec yarn clean",
     "lint": "eslint --ext .js,.ts,.tsx .",
+    "build": "lerna exec yarn build",
     "cov": "egg-bin cov"
   },
   "egg": {
@@ -13,6 +14,7 @@
   "author": "DiamondYuan",
   "devDependencies": {
     "@diamondyuan/eslint-config-typescript": "^6.0.0",
+    "@types/node": "^12.0.2",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
     "babel-eslint": "^10.0.1",
@@ -29,5 +31,8 @@
     "hooks": {
       "pre-commit": "yarn lint"
     }
+  },
+  "dependencies": {
+    "mocha": "^6.1.4"
   }
 }
