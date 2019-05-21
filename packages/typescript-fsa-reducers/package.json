@@ -5,10 +5,10 @@
     "access": "public"
   },
   "description": "Fluent syntax for defining typesafe Redux reducers on top of typescript-fsa.",
-  "main": "dist/index.js",
-  "types": "dist/index",
+  "main": "lib/index.js",
+  "types": "lib/index",
   "files": [
-    "dist/"
+    "lib/"
   ],
   "keywords": [
     "redux",
@@ -17,7 +17,7 @@
     "reducer"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsc",
     "prepublish": "yarn run build"
   },
   "devDependencies": {

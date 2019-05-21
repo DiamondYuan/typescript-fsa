@@ -1,5 +1,5 @@
 **/node_modules
-packages/typescript-fsa/lib/
-packages/typescript-fsa/dist/
-packages/typescript-fsa/tests/
+packages/typescript-fsa/lib
+packages/typescript-fsa-reducers/lib
+
 
