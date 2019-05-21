@@ -34,60 +34,37 @@ export function isType<Payload>(
 
 export type ActionCreator<Payload> = {
   type: string;
-  /**
-   * Identical to `isType` except it is exposed as a bound method of an action
-   * creator. Since it is bound and takes a single argument it is ideal for
-   * passing to a filtering function like `Array.prototype.filter` or
-   * RxJS's `Observable.prototype.filter`.
-   *
-   * @example
-   *
-   *    const somethingHappened =
-   *      actionCreator<{foo: string}>('SOMETHING_HAPPENED');
-   *    const somethingElseHappened =
-   *      actionCreator<{bar: number}>('SOMETHING_ELSE_HAPPENED');
-   *
-   *    if (somethingHappened.match(action)) {
-   *      // action.payload has type {foo: string}
-   *    }
-   *
-   *    const actionArray = [
-   *      somethingHappened({foo: 'foo'}),
-   *      somethingElseHappened({bar: 5}),
-   *    ];
-   *
-   *    // somethingHappenedArray has inferred type Action<{foo: string}>[]
-   *    const somethingHappenedArray =
-   *      actionArray.filter(somethingHappened.match);
-   */
   match: (action: AnyAction) => action is Action<Payload>;
-  /**
-   * Creates action with given payload and metadata.
-   *
-   * @param payload Action payload.
-   * @param meta Action metadata. Merged with `commonMeta` of Action Creator.
-   */
-  (payload: Payload, meta?: Meta): Action<Payload>;
 } & (Payload extends void
   ? {
-      /**
-       * Creates action with given payload and metadata.
-       *
-       * @param payload Action payload.
-       * @param meta Action metadata. Merged with `commonMeta` of Action Creator.
-       */
       (payload?: Payload, meta?: Meta): Action<Payload>;
     }
-  : {});
+  : {
+      (payload: Payload, meta?: Meta): Action<Payload>;
+    });
 
-export type Success<Params, Result> = (
-  | { params: Params }
-  | (Params extends void ? { params?: Params } : never)) &
-  ({ result: Result } | (Result extends void ? { result?: Result } : never));
+type OptionalParams<Params> = Params extends void
+  ? {
+      params?: Params;
+    }
+  : {
+      params: Params;
+    };
 
-export type Failure<Params, Error> = (
-  | { params: Params }
-  | (Params extends void ? { params?: Params } : never)) & { error: Error };
+type OptionalResult<Result> = Result extends void
+  ? {
+      result?: Result;
+    }
+  : {
+      result: Result;
+    };
+
+export type Success<Params, Result> = OptionalResult<Result> &
+  OptionalParams<Params>;
+
+export type Failure<Params, Error> = {
+  error: Error;
+} & OptionalParams<Params>;
 
 export interface AsyncActionCreators<Params, Result, Error = {}> {
   type: string;
@@ -97,46 +74,18 @@ export interface AsyncActionCreators<Params, Result, Error = {}> {
 }
 
 export interface ActionCreatorFactory {
-  /**
-   * Creates Action Creator that produces actions with given `type` and payload
-   * of type `Payload`.
-   *
-   * @param type Type of created actions.
-   * @param commonMeta Metadata added to created actions.
-   * @param isError Defines whether created actions are error actions.
-   */
   <Payload = void>(
     type: string,
     commonMeta?: Meta,
     isError?: boolean
   ): ActionCreator<Payload>;
-  /**
-   * Creates Action Creator that produces actions with given `type` and payload
-   * of type `Payload`.
-   *
-   * @param type Type of created actions.
-   * @param commonMeta Metadata added to created actions.
-   * @param isError Function that detects whether action is error given the
-   *   payload.
-   */
+
   <Payload = void>(
     type: string,
     commonMeta?: Meta,
     isError?: (payload: Payload) => boolean
   ): ActionCreator<Payload>;
 
-  /**
-   * Creates three Action Creators:
-   * * `started: ActionCreator<Params>`
-   * * `done: ActionCreator<{params: Params, result: Result}>`
-   * * `failed: ActionCreator<{params: Params, error: Error}>`
-   *
-   * Useful to wrap asynchronous processes.
-   *
-   * @param type Prefix for types of created actions, which will have types
-   *   `${type}_STARTED`, `${type}_DONE` and `${type}_FAILED`.
-   * @param commonMeta Metadata added to created actions.
-   */
   async<Params, Result, Error = {}>(
     type: string,
     commonMeta?: Meta
@@ -149,12 +98,6 @@ declare const process: {
   };
 };
 
-/**
- * Creates Action Creator factory with optional prefix for action types.
- * @param prefix Prefix to be prepended to action types as `<prefix>/<type>`.
- * @param defaultIsError Function that detects whether action is error given the
- *   payload. Default is `payload => payload instanceof Error`.
- */
 export function actionCreatorFactory(
   prefix?: string | null,
   defaultIsError: (payload: any) => boolean = p => p instanceof Error
