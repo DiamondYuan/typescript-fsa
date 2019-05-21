@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.ts,.tsx .",
-    "build": "lerna exec yarn  build"
+    "build": "lerna exec npm run build"
   },
   "egg": {
     "typescript": true
@@ -23,14 +23,12 @@
     "husky": "^2.3.0",
     "lerna": "^3.13.0",
     "prettier": "^1.17.1",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "mocha": "^6.1.4"
   },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint"
     }
-  },
-  "dependencies": {
-    "mocha": "^6.1.4"
   }
 }
