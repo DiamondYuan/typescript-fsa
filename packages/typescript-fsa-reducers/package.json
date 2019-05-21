@@ -17,22 +17,11 @@
     "reducer"
   ],
   "scripts": {
-    "build": "yarn run clean && tsc -p tsconfig.build.json",
-    "clean": "rm -rf dist/*",
-    "format-file": "prettier --write",
-    "format": "git ls-files | egrep '\\.(js(on)?|scss|tsx?)?$' | xargs yarn run format-file",
-    "generate-toc": "git ls-files | egrep '\\.md$' | xargs scripts/markdown-toc-all.sh",
-    "jest": "jest",
-    "prepublishOnly": "yarn run test && yarn run build",
-    "test": "tsc && yarn run jest"
+    "build": "tsc -p tsconfig.build.json",
+    "prepublish": "yarn run build"
   },
   "devDependencies": {
     "@diamondyuan/typescript-fsa": "0.0.1",
-    "@types/jest": "^23.3.3",
-    "jest": "^23.6.0",
-    "markdown-toc": "^1.2.0",
-    "prettier": "^1.14.3",
-    "ts-jest": "^23.10.3",
     "typescript": "^3.1.1"
   },
   "peerDependencies": {
