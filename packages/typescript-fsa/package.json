@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "clean": "rimraf lib",
+    "clean": "rimraf lib coverage",
     "cov": "egg-bin cov",
     "test": "egg-bin test"
   },

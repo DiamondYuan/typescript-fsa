@@ -5,10 +5,9 @@ node_js:
   - '10'
 install:
   - yarn
-  - yarn bootstrap
+  - yarn lerna bootstrap
 script:
   - yarn lint
-  - yarn test
   - yarn cov
 after_success:
   - npm i codecov && codecov
