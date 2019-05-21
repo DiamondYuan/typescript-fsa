@@ -24,8 +24,5 @@
     "cov": "egg-bin cov",
     "prepublish": "npm run build"
   },
-  "gitHead": "f22ca90f98a3172f1db29a530f53e3480f4983bd",
-  "dependencies": {
-    "typescript": "^3.4.5"
-  }
+  "gitHead": "b63d97c9e3a3da05a2d5083824d13346a4bc102d"
 }
