@@ -27,7 +27,7 @@
   "egg": {
     "typescript": true
   },
-  "gitHead": "b37816f9b6f984a1c6c53d6a59be50b0c33e6aec",
+  "gitHead": "f22ca90f98a3172f1db29a530f53e3480f4983bd",
   "dependencies": {
     "typescript": "^3.4.5"
   }
