@@ -17,8 +17,7 @@
     "reducer"
   ],
   "scripts": {
-    "build": "tsc",
-    "prepublish": "yarn run build"
+    "build": "tsc"
   },
   "devDependencies": {
     "@diamondyuan/typescript-fsa": "^0.0.3"

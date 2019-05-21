@@ -2,10 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "clean": "lerna exec yarn clean",
     "lint": "eslint --ext .js,.ts,.tsx .",
-    "build": "lerna exec yarn build",
-    "cov": "egg-bin cov"
+    "build": "lerna exec yarn  build"
   },
   "egg": {
     "typescript": true
