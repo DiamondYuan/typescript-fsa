@@ -1,5 +1,8 @@
 {
   "name": "@diamondyuan/typescript-fsa-saga",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.9",
   "description": "> TODO: description",
   "main": "lib/index.js",
@@ -7,9 +10,6 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "devDependencies": {
     "@diamondyuan/typescript-fsa": "^0.0.9",
     "redux-saga": "^1.0.2"
