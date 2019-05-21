@@ -20,7 +20,8 @@
     "build": "tsc",
     "clean": "rimraf lib coverage",
     "test": "egg-bin test",
-    "cov": "egg-bin cov"
+    "cov": "egg-bin cov",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "@diamondyuan/typescript-fsa": "^0.0.4"

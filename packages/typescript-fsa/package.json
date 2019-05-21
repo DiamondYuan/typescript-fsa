@@ -21,7 +21,8 @@
     "build": "tsc",
     "clean": "rimraf lib coverage",
     "cov": "egg-bin cov",
-    "test": "egg-bin test"
+    "test": "egg-bin test",
+    "prepublish": "npm run build"
   },
   "egg": {
     "typescript": true
