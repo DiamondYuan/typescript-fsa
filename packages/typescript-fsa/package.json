@@ -19,7 +19,11 @@
   ],
   "scripts": {
     "build": "tsc",
-    "clean": "rimraf lib"
+    "clean": "rimraf lib",
+    "test": "egg-bin test"
+  },
+  "egg": {
+    "typescript": true
   },
   "gitHead": "3e6adde703b105f17536ee9ecac05adc165d8b6e"
 }
