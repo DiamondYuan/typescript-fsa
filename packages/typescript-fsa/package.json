@@ -22,7 +22,7 @@
   "scripts": {
     "clean": "rimraf lib dist",
     "test": "ts-node -P tsconfig.tests.json node_modules/.bin/tape tests/*.ts",
-    "build:commonjs": "tsc",
+    "build": "tsc",
     "prepublish": "npm run clean && npm run test && npm run build"
   },
   "author": "DiamondYuan",
