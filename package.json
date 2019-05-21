@@ -4,7 +4,7 @@
   "scripts": {
     "clean": "lerna exec yarn clean",
     "lint": "eslint --ext .js,.ts,.tsx .",
-    "test": "egg-bin test"
+    "cov": "egg-bin cov"
   },
   "egg": {
     "typescript": true
