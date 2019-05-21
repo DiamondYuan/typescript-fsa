@@ -1,0 +1,10 @@
+# Created by https://www.gitignore.io/api/visualstudiocode
+
+### VisualStudioCode ###
+.vscode/
+
+dist/
+node_modules/
+npm-debug.log
+yarn-error.log
+coverage
