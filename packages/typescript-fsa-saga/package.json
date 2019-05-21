@@ -1,6 +1,6 @@
 {
   "name": "@diamondyuan/typescript-fsa-saga",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "> TODO: description",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -8,7 +8,7 @@
     "lib"
   ],
   "devDependencies": {
-    "@diamondyuan/typescript-fsa": "^0.0.6",
+    "@diamondyuan/typescript-fsa": "^0.0.7",
     "redux-saga": "^1.0.2"
   },
   "peerDependencies": {

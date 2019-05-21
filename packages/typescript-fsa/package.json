@@ -1,6 +1,6 @@
 {
   "name": "@diamondyuan/typescript-fsa",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Type-safe action creator utilities",
   "publishConfig": {
     "access": "public"

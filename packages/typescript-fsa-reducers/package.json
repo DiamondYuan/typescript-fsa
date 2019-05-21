@@ -1,6 +1,6 @@
 {
   "name": "@diamondyuan/typescript-fsa-reducers",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publishConfig": {
     "access": "public"
   },
@@ -24,7 +24,7 @@
     "prepublish": "npm run build"
   },
   "devDependencies": {
-    "@diamondyuan/typescript-fsa": "^0.0.6"
+    "@diamondyuan/typescript-fsa": "^0.0.7"
   },
   "peerDependencies": {
     "@diamondyuan/typescript-fsa": "*"
