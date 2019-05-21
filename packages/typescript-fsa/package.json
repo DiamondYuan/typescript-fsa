@@ -18,7 +18,8 @@
     "lib"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "clean": "rimraf lib"
   },
   "gitHead": "3e6adde703b105f17536ee9ecac05adc165d8b6e"
 }

@@ -17,7 +17,8 @@
     "reducer"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "clean": "rimraf lib"
   },
   "devDependencies": {
     "@diamondyuan/typescript-fsa": "^0.0.4"

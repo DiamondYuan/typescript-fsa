@@ -4,7 +4,8 @@
   "scripts": {
     "lint": "eslint --ext .js,.ts,.tsx .",
     "build": "lerna exec npm run build",
-    "prepublish": "npm run build"
+    "clean": "lerna exec npm run clean",
+    "prepublish": "npm run lint && npm run build"
   },
   "egg": {
     "typescript": true
@@ -23,9 +24,10 @@
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^2.3.0",
     "lerna": "^3.13.0",
+    "mocha": "^6.1.4",
     "prettier": "^1.17.1",
-    "typescript": "^3.4.5",
-    "mocha": "^6.1.4"
+    "rimraf": "^2.6.3",
+    "typescript": "^3.4.5"
   },
   "husky": {
     "hooks": {
