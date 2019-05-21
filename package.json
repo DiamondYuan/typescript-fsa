@@ -6,7 +6,8 @@
     "build": "lerna exec npm run build",
     "clean": "lerna exec npm run clean",
     "cov": "lerna exec npm run cov",
-    "test": "lerna exec npm run test"
+    "test": "lerna exec npm run test",
+    "bootstrap": "yarn lerna bootstrap"
   },
   "license": "MIT",
   "author": "DiamondYuan",
